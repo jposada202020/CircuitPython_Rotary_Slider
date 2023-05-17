@@ -10,7 +10,7 @@ requires = [
 ]
 
 [project]
-name = "circuitpython-rotary_slider"
+name = "circuitpython-rotary-slider"
 description = "Displayio Layout Rotary Slider Widget"
 version = "0.0.0+auto.0"
 readme = "README.rst"
