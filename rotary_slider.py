@@ -133,7 +133,7 @@ class Slider(Widget, Control):
         line_color: Tuple[int, int, int] = (255, 255, 255),
     ):
 
-        Widget.__init__(self, x=x, y=y, height=radius*2, width=radius*2)
+        Widget.__init__(self, x=x, y=y, height=radius * 2, width=radius * 2)
         Control.__init__(self)
         self._x = x
         self._y = y
@@ -172,11 +172,17 @@ class Slider(Widget, Control):
             y=0,
         )
         draw_circle(self.dial_bitmap, self.radius, self.radius, self.radius, 1)
-        self._circle_inside = Circle(pixel_shader=self._palette, radius=self.radius-1, x=self.radius, y=self.radius, color_index=2)
+        self._circle_inside = Circle(
+            pixel_shader=self._palette,
+            radius=self.radius - 1,
+            x=self.radius,
+            y=self.radius,
+            color_index=2,
+        )
 
         self._knob_handle = RoundRect(
-            x=-self._knob_width//2,
-            y=self.radius-self._knob_height//2,
+            x=-self._knob_width // 2,
+            y=self.radius - self._knob_height // 2,
             width=self._knob_width,
             height=self._knob_height,
             r=4,
@@ -220,10 +226,18 @@ class Slider(Widget, Control):
 
         self.selected((touch_x, touch_y, 0))
 
-        angle = math.atan2((touch_y-self.radius), (touch_x-self.radius))
+        angle = math.atan2((touch_y - self.radius), (touch_x - self.radius))
 
-        self._knob_handle.x = self.radius + math.ceil(self.radius * math.cos(angle)) - self._knob_width // 2
-        self._knob_handle.y = self.radius + math.ceil(self.radius * math.sin(angle)) - self._knob_height // 2
+        self._knob_handle.x = (
+            self.radius
+            + math.ceil(self.radius * math.cos(angle))
+            - self._knob_width // 2
+        )
+        self._knob_handle.y = (
+            self.radius
+            + math.ceil(self.radius * math.sin(angle))
+            - self._knob_height // 2
+        )
 
         return self._knob_handle.x, self._knob_handle.y
 
