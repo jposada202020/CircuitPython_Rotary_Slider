@@ -15,7 +15,7 @@ Introduction
     :alt: Total PyPI downloads
     :target: https://pepy.tech/project/circuitpython-rotary-slider
 
-.. image:: https://github.com/jposada202020/CircuitPython_ROTARY-SLIDER/workflows/Build%20CI/badge.svg
+.. image:: https://github.com/jposada202020/CircuitPython_Rotary_Slider/workflows/Build%20CI/badge.svg
     :target: https://github.com/jposada202020/CircuitPython_Rotary_Slider/actions
     :alt: Build Status
 
