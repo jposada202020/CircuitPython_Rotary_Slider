@@ -132,7 +132,6 @@ class Slider(Widget, Control):
         background_color: Tuple[int, int, int] = (255, 0, 0),
         line_color: Tuple[int, int, int] = (255, 255, 255),
     ):
-
         Widget.__init__(self, x=x, y=y, height=radius * 2, width=radius * 2)
         Control.__init__(self)
         self._x = x
@@ -158,7 +157,6 @@ class Slider(Widget, Control):
         self._create_slider()
 
     def _create_slider(self):
-
         self._palette = displayio.Palette(3)
         self._palette.make_transparent(0)
         self._palette[1] = self._line_color
